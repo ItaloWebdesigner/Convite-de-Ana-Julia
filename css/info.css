@@ -1,4 +1,5 @@
 /* MODAL */
+/* 
 #soundModal {
   position: fixed;
   inset: 0;
@@ -8,7 +9,7 @@
   justify-content: center;
   z-index: 99999;
 
-  /* BLINDAGEM MOBILE */
+  /* BLINDAGEM MOBILE 
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
@@ -23,7 +24,7 @@
   justify-content: center;
   z-index: 10000;
 
-  /* IMPORTANTE: não herdar opacity do body */
+  /* IMPORTANTE: não herdar opacity do body 
   opacity: 1 !important;
 }
 
@@ -52,7 +53,7 @@
   border-radius: 10px;
   cursor: pointer;
 }
-
+*/
 
 .infopage{
     position: relative;
@@ -86,7 +87,7 @@
     min-width: 310px;
     position: absolute;
     text-align: center;
-    top: 14%;
+    top: 15%;
     left: 50%;
     z-index: 9;
     width: 18vw;
