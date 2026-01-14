@@ -70,7 +70,7 @@
     position: absolute;
     width: 90px;
     height: 43px;
-    top: 30%;
+    top: 27%;
     z-index: 99;
     background-color: #e6130f;
     color: #ffffff;
@@ -82,8 +82,8 @@
 }
 
 .convideo{
-    max-width: 350px;
-    min-width: 350px;
+    max-width: 310px;
+    min-width: 310px;
     position: absolute;
     text-align: center;
     top: 14%;

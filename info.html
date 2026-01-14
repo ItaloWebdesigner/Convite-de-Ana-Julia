@@ -38,6 +38,7 @@
 
   <body>
 
+ 
     <div id="soundModal" class="sound-modal">
       <div class="sound-modal-box">
         <h2>Ativar som</h2>
@@ -46,10 +47,11 @@
     </div>
 
 
-    <video class="convideo" id="video" loop playsinline preload="auto">
+    <video class="convideo" id="video" loop playsinline preload="auto" controls>
       <source src="images/aberturaanajulia.mp4" type="video/mp4">
       Seu navegador não suporta vídeo HTML5.
     </video>
+
 
 
     <div class="infopage">
@@ -70,31 +72,27 @@
 
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
+<script>
+document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("soundModal");
   const btn = document.getElementById("enterWithSound");
   const video = document.getElementById("video");
 
-  if (!modal || !btn) return;
+  if (!modal || !btn || !video) return;
 
   btn.addEventListener("click", () => {
-    if (video) {
-      video.muted = false;
-      video.volume = 1;
+    video.muted = false;
+    video.volume = 1;
 
-      video.play().then(() => {
-        modal.remove();
-      }).catch(() => {
-        // Mesmo se falhar, fecha o modal
-        modal.remove();
-      });
-    } else {
+    video.play().then(() => {
       modal.remove();
-    }
+    }).catch(() => {
+      modal.remove();
+    });
   });
 });
-      </script>
+</script>
+
 
 
   </body>
