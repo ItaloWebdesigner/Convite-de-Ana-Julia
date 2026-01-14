@@ -39,11 +39,11 @@
   <body>
 
     <div id="soundModal" class="sound-modal">
-  <div class="sound-modal-box">
-    <h2>Ativar som</h2>
-    <button id="enterWithSound">Entrar com som</button>
-  </div>
-</div>
+      <div class="sound-modal-box">
+        <h2>Ativar som</h2>
+        <button id="enterWithSound">Entrar com som</button>
+      </div>
+    </div>
 
 
     <video class="convideo" id="video" loop playsinline preload="auto">
@@ -71,30 +71,30 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
       <script>
-document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("soundModal");
   const btn = document.getElementById("enterWithSound");
   const video = document.getElementById("video");
 
-  if (!modal || !btn || !video) return;
+  if (!modal || !btn) return;
 
-  btn.addEventListener("click", async () => {
-    // Fecha o modal
-    modal.remove();
-
-    try {
-      // Garante que o som esteja ativo
+  btn.addEventListener("click", () => {
+    if (video) {
       video.muted = false;
       video.volume = 1;
 
-      // Inicia o vídeo com som
-      await video.play();
-    } catch (error) {
-      console.error("Não foi possível iniciar o vídeo:", error);
+      video.play().then(() => {
+        modal.remove();
+      }).catch(() => {
+        // Mesmo se falhar, fecha o modal
+        modal.remove();
+      });
+    } else {
+      modal.remove();
     }
   });
 });
-</script>
+      </script>
 
 
   </body>

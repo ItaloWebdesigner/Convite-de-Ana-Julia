@@ -1,4 +1,19 @@
 /* MODAL */
+#soundModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+
+  /* BLINDAGEM MOBILE */
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
 .sound-modal {
   position: fixed;
   inset: 0;
