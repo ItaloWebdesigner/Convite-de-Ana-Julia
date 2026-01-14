@@ -38,11 +38,19 @@
 
   <body>
 
-    <video class="convideo" id="video" controls>
-    <!-- 🔴 TROQUE PELO SEU VÍDEO -->
-    <source src="images/aberturaanajulia.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo HTML5.
+    <div id="soundModal" class="sound-modal">
+  <div class="sound-modal-box">
+    <h2>Ativar som</h2>
+    <button id="enterWithSound">Entrar com som</button>
+  </div>
+</div>
+
+
+    <video class="convideo" id="video" loop playsinline preload="auto">
+      <source src="images/aberturaanajulia.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo HTML5.
     </video>
+
 
     <div class="infopage">
       <a href="index.html" class="botao"><span class="voltar">←</span>Voltar</a>
@@ -52,6 +60,8 @@
       <a href="sugestao.html"><img class="presente" src="images/presentemorango.png"></a>
     </div>
 
+    
+
     <script type="text/javascript" src="js/script.js"></script>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -59,6 +69,33 @@
     <script type="text/javascript" src="js/popper.min.js"></script>
 
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+      <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("soundModal");
+  const btn = document.getElementById("enterWithSound");
+  const video = document.getElementById("video");
+
+  if (!modal || !btn || !video) return;
+
+  btn.addEventListener("click", async () => {
+    // Fecha o modal
+    modal.remove();
+
+    try {
+      // Garante que o som esteja ativo
+      video.muted = false;
+      video.volume = 1;
+
+      // Inicia o vídeo com som
+      await video.play();
+    } catch (error) {
+      console.error("Não foi possível iniciar o vídeo:", error);
+    }
+  });
+});
+</script>
+
 
   </body>
 
